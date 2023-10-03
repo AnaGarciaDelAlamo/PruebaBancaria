@@ -1,5 +1,5 @@
 import java.io.FileWriter;
-import java.io.IOException;
+
 import java.io.PrintWriter;
 
 class HiloCliente implements Runnable {
@@ -7,7 +7,7 @@ class HiloCliente implements Runnable {
     private double cantidad;
     private boolean deposito;
 
-    public HiloCliente(Cuenta cuenta, double cantidad, boolean deposito) throws IOException {
+    public HiloCliente(Cuenta cuenta, double cantidad, boolean deposito){
         this.cuenta = cuenta;
         this.cantidad = cantidad;
         this.deposito = deposito;
