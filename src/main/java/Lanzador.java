@@ -1,3 +1,6 @@
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
 public class Lanzador {
     public static void main(String[] args) {
         Cuenta cuenta = new Cuenta(10000);
@@ -34,6 +37,16 @@ public class Lanzador {
             System.out.println("La simulación ha funcionado correctamente. Saldo final: " + saldoFinal);
         } else {
             System.out.println("La simulación ha fallado. Saldo final: " + saldoFinal);
+        }
+
+        try {
+            FileWriter fileWriter = new FileWriter("resultado.txt");
+            PrintWriter printWriter = new PrintWriter(fileWriter);
+
+            printWriter.println("Saldo final: " + saldoFinal);
+            printWriter.close();
+        }catch (Exception e) {
+            System.out.println("Error al escribir el archivo");
         }
     }
 }
